@@ -43,7 +43,20 @@
 在2011年之前，轻量级加密算法的研究主要集中在硬件实现上。这是因为硬件实现能够提供更高的性能，如ISO的轻量级加密标准PRESENT[7]。同时，硬件实现也能确保算法的安全性。
 然而，随着应用场景的增加，性能需求也在变化。现在，不仅关注硬件的电路面积，也开始关注软件加密的执行时间，如美国国家安全局(NSA)2013年提出的SIMON[8]。此外，还关注硬件加密的功耗，如2015年亚密会提出的Midori[9]，以及硬件加密的时延，如2016年美密会提出的SKINNY[10]。因此，轻量级加密算法的内涵正在不断扩展。
 
-在轻量级加密算法设计不断
+轻量级加密算法的设计和实现都在不断发展和完善。早期的轻量级加密算法主要集中在硬件实现上。例如，Arich等人对DES算法的硬件实现[11]，他们将DES的加密速率提高到了1 Gbits/s。
+随着硬件实现的进步，性能指标也从电路面积和加密吞吐量扩展到了功耗和时延等方面。为了实现这些性能指标，提出了一些全新的硬件实现技术。其中，串行、展开、迭代、流水线等技术得到了广泛应用。
+
+串行实现的核心思想是降低加密时的数据带宽。这种方法可以实现对加密组件的重复使用，并减少电路中的寄存器使用数量，以实现更低的电路面积。Good等人提出了AES算法的串行实现[12]。他们在Xilinx Spartan-II FPGA (XC2S15)上实现了面积资源174 slices和两个内存块。
+在这种实现中，最小的数据带宽为一个字节。为了进一步降低数据带宽，Leong等人提供了IDEA算法的比特级数据带宽的串行实现[13]。然而，对于以S盒作为基本加密组件的加密算法，实现一比特级的数据带宽是困难的。
+为了解决这个问题，Jean等人为类SPN结构的加密算法提出了比特滑动技术[14]。这种技术可以实现比特级的数据带宽。
+
+展开实现的核心思想是在同一周期内计算加密算法的多轮函数。这种方法可以降低加密所需的延迟，并在引入更多面积的情况下获取更高的吞吐量。Elbirt等人在AES算法竞选的最终轮中使用了展开实现[15]。他们的2轮展开实现Rijndael算法实现了最高的吞吐量，这在对比基于轮的迭代实现时尤为明显。Gupta等人将展开实现与流水线结合[16]，这极大地提高了RC4[17]算法的吞吐量。
+
+迭代实现的核心思想是在同一周期内运算加密算法的一轮函数。通过反馈机制，可以实现多轮函数的计算。这种方法可以减少加密所需的面积，但会增加加密所需的延迟。值得注意的是，迭代实现在面积与吞吐量之间实现了较好的平衡。在AES算法竞选的最终轮中，Elbirt等人的迭代实现的Rijndael获得了最高的吞吐量与面积比[15]。类似的情况也出现在LWC竞赛中。ASCON算法的迭代实现在面积与吞吐量上取得了较好的平衡[6]。
+
+流水线实现的核心思想是将加密算法的一轮函数分解为多个阶段。这样，每个阶段的计算可以并行进行，实现多个分组同时加密。这种方法可以显著提高加密所需的吞吐量，但会增加实现的面积。
+Kryjak等人运用了这种流水线技术[18]。他们对CLEFIA[19]算法进行了实现，极大地提高了加密的吞吐量。然而，考虑到所需的资源，这种实现主要适用于超性能计算场景。
+
 
 
 \subsection{参考文献}
@@ -66,6 +79,26 @@
 [9] Banik, Subhadeep, et al. "Midori: A block cipher for low energy." Advances in Cryptology–ASIACRYPT 2015: 21st International Conference on the Theory and Application of Cryptology and Information Security, Auckland, New Zealand, November 29--December 3, 2015, Proceedings, Part II 21. Springer Berlin Heidelberg, 2015.
 
 [10] Beierle, Christof, et al. "The SKINNY family of block ciphers and its low-latency variant MANTIS." Advances in Cryptology–CRYPTO 2016: 36th Annual International Cryptology Conference, Santa Barbara, CA, USA, August 14-18, 2016, Proceedings, Part II 36. Springer Berlin Heidelberg, 2016.
+
+[11] Arich, Touria, and Mohssine Eleuldj. "Hardware implementations of the data encryption standard." The 14th International Conference on Microelectronics,. IEEE, 2002.
+
+[12] Good, Tim, and Mohammed Benaissa. "AES as stream cipher on a small FPGA." 2006 IEEE International Symposium on Circuits and Systems. IEEE, 2006.
+
+[13] Leong, Monk-Ping, et al. "A bit-serial implementation of the international data encryption algorithm IDEA." Proceedings 2000 IEEE Symposium on Field-Programmable Custom Computing Machines (Cat. No. PR00871). IEEE, 2000.
+
+[14] Jean, Jérémy, et al. "Bit-Sliding: A Generic Technique for Bit-Serial Implementations of SPN-based Primitives: Applications to AES, PRESENT and SKINNY." Cryptographic Hardware and Embedded Systems–CHES 2017: 19th International Conference, Taipei, Taiwan, September 25-28, 2017, Proceedings. Springer International Publishing, 2017.
+
+[15] Elbirt, Adam J., et al. "An FPGA-based performance evaluation of the AES block cipher candidate algorithm finalists." IEEE Transactions on Very Large Scale Integration (VLSI) Systems 9.4 (2001): 545-557.
+
+[16] Gupta, Sourav Sen, et al. "High-performance hardware implementation for RC4 stream cipher." IEEE Transactions on Computers 62.4 (2012): 730-743.
+
+[17] Paul, Goutam, and Subhamoy Maitra. RC4 stream cipher and its variants. CRC press, 2011.
+
+[18] Kryjak, Tomasz, and Marek Gorgon. "Pipeline implementation of the 128-bit block cipher CLEFIA in FPGA." 2009 International Conference on Field Programmable Logic and Applications. IEEE, 2009.
+
+[19] Shirai, Taizo, et al. "The 128-bit blockcipher CLEFIA." Fast Software Encryption: 14th International Workshop, FSE 2007, Luxembourg, Luxembourg, March 26-28, 2007, Revised Selected Papers 14. Springer Berlin Heidelberg, 2007.
+
+
 
 \subsection{项目应用前景和学术价值}
 \subsection{现有研究基础、条件、手段}
