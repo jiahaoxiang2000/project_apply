@@ -17,7 +17,7 @@
 随着基础通信设施的不断完善，如5G网络的普及，人们对通信的需求逐渐增加。这种需求的增长催生了大量基于通信的应用，如工业互联网、车联网、物联网等。
 然而，随着这些网络中传输的数据量的增加，安全问题变得越来越严重。这主要是由网络数据中数据包传输机制引起的。幸运的是，对称加密算法提供了一种解决方案，只需双方协商好密钥，就能确保数据在公共信道下的安全传输，而无需调整传输机制。 
 
-对称加密算法中，最广泛使用的是2001年的AES[1]国际算法。它在WEB、WIFI等领域，以及服务器与个人计算机上都得到了广泛的应用。然而，为了避免AES算法存在的未知门陷，我国在2006年提出了SM4[2]对称加密算法来替代AES算法。值得一提的是，SM4在2021年正式成为ISO标准并得到了国际认可。
+对称加密算法中，最广泛使用的是2001年的AES[1]国际算法。它在WEB、WIFI等领域，以及服务器与个人计算机上都得到了广泛的应用。然而，为了避免AES算法存在的未知门陷，我国在2006年提出了SMS4[2]对称加密算法来替代AES算法。值得一提的是，SMS4在2021年正式成为ISO标准并得到了国际认可。
 这些传统的对称算法在计算资源充足的场景下，能够提供较高的安全性。但在计算资源受限的场景下，由于这些算法的计算复杂度较高，因此需要一种更加轻量级的对称加密算法来满足这种场景的需求。
 
 美国国家标准局NIST于2019年启动了轻量级密码算法LWC的征召。在56个轻量级密码算法的竞争中，ASCON[3]算法经过三轮筛选，最终脱颖而出。到了2023年，ASCON算法已经成为NIST的轻量级加密标准。由于ASCON算法在资源受限的场景下表现出较高的性能，因此在物联网、车联网等场景中具有广泛的应用前景。
@@ -38,6 +38,14 @@
 
 \subsection{国内外研究现状分析和发展趋势}
 
+网络数据传输量的增加使得网络安全问题日益严重。对称加密算法是一种能够确保数据在公共信道下安全传输的解决方案。然而，传统的对称加密算法在计算资源受限的场景下计算复杂度较高。因此，需要一种轻量级的对称加密算法来满足这种场景的需求。
+
+在2011年之前，轻量级加密算法的研究主要集中在硬件实现上。这是因为硬件实现能够提供更高的性能，如ISO的轻量级加密标准PRESENT[7]。同时，硬件实现也能确保算法的安全性。
+然而，随着应用场景的增加，性能需求也在变化。现在，不仅关注硬件的电路面积，也开始关注软件加密的执行时间，如美国国家安全局(NSA)2013年提出的SIMON[8]。此外，还关注硬件加密的功耗，如2015年亚密会提出的Midori[9]，以及硬件加密的时延，如2016年美密会提出的SKINNY[10]。因此，轻量级加密算法的内涵正在不断扩展。
+
+在轻量级加密算法设计不断
+
+
 \subsection{参考文献}
 [1] Daemen, Joan, and Vincent Rijmen. "AES proposal: Rijndael." (1999).
 
@@ -51,6 +59,13 @@
 
 [6] Mohajerani, Kamyar, et al. "FPGA benchmarking of round 2 candidates in the NIST lightweight cryptography standardization process: Methodology, metrics, tools, and results." Cryptology ePrint Archive (2020).
 
+[7] Bogdanov, Andrey, et al. "PRESENT: An ultra-lightweight block cipher." Cryptographic Hardware and Embedded Systems-CHES 2007: 9th International Workshop, Vienna, Austria, September 10-13, 2007. Proceedings 9. Springer Berlin Heidelberg, 2007.
+
+[8] Beaulieu, Ray, et al. "The SIMON and SPECK lightweight block ciphers." Proceedings of the 52nd annual design automation conference. 2015.
+
+[9] Banik, Subhadeep, et al. "Midori: A block cipher for low energy." Advances in Cryptology–ASIACRYPT 2015: 21st International Conference on the Theory and Application of Cryptology and Information Security, Auckland, New Zealand, November 29--December 3, 2015, Proceedings, Part II 21. Springer Berlin Heidelberg, 2015.
+
+[10] Beierle, Christof, et al. "The SKINNY family of block ciphers and its low-latency variant MANTIS." Advances in Cryptology–CRYPTO 2016: 36th Annual International Cryptology Conference, Santa Barbara, CA, USA, August 14-18, 2016, Proceedings, Part II 36. Springer Berlin Heidelberg, 2016.
 
 \subsection{项目应用前景和学术价值}
 \subsection{现有研究基础、条件、手段}
