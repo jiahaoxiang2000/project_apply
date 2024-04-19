@@ -42,7 +42,7 @@
 
 在2011年之前，轻量级加密算法的研究主要集中在硬件实现上。这是因为硬件实现能够提供更高的性能，如ISO的轻量级加密标准PRESENT[7]。同时，硬件实现也能确保算法的安全性。
 然而，随着应用场景的增加，性能需求也在变化。现在，不仅关注硬件的电路面积，也开始关注软件加密的执行时间，如美国国家安全局(NSA)2013年提出的SIMON[8]。此外，还关注硬件加密的功耗，如2015年亚密会提出的Midori[9]，以及硬件加密的时延，如2016年美密会提出的SKINNY[10]。因此，轻量级加密算法的内涵正在不断扩展。
-
+\subsubsection{轻量级加密算法硬件实现}
 轻量级加密算法的设计和实现都在不断发展和完善。早期的轻量级加密算法主要集中在硬件实现上。例如，Arich等人对DES算法的硬件实现[11]，他们将DES的加密速率提高到了1 Gbits/s。
 随着硬件实现的进步，性能指标也从电路面积和加密吞吐量扩展到了功耗和时延等方面。为了实现这些性能指标，提出了一些全新的硬件实现技术。其中，串行、展开、迭代、流水线等技术得到了广泛应用。
 
@@ -57,7 +57,14 @@
 流水线实现的核心思想是将加密算法的一轮函数分解为多个阶段。这样，每个阶段的计算可以并行进行，实现多个分组同时加密。这种方法可以显著提高加密所需的吞吐量，但会增加实现的面积。
 Kryjak等人运用了这种流水线技术[18]。他们对CLEFIA[19]算法进行了实现，极大地提高了加密的吞吐量。然而，考虑到所需的资源，这种实现主要适用于超性能计算场景。
 
+总的来说，对于传统的性能指标，如面积和吞吐量，轻量级加密算法的硬件实现已经有了较好的解决方案。然而，对于新的性能指标，如功耗和时延，还需要进一步的研究。未来的研究重点是如何提出新的硬件实现技术，以适应这些新的性能指标。
 
+\subsubsection{轻量级加密算法软件实现}
+轻量级加密算法的软件实现主要集中在微控制器上。这与硬件实现有所不同。微控制器提供了更高的灵活性。例如，可以在不同的应用场景下调整加密算法的参数，或者使用不同的加密算法。同时，微控制器也提供了更高的可移植性。例如，可以在不同的硬件平台上运行加密算法。然而，相比硬件实现，软件实现的性能指标通常较低。
+
+早期的轻量级加密算法的软件实现主要集中在8-bit微控制器上。这些微控制器常用于RFID和传感器等设备。在1991年，Merkle尝试将Khufu算法进行软件实现。这为算法在其他不同场景下的应用打开了新的可能性[20]。后来，Osvik将AES算法实现在8-bit的AVR微控制器上，刷新了当时的最快加密记录[21]。
+
+随着微控制器的发展，32-bit微控制器成为主流。软件实现的侧重也发生了改变。Rogaway开始在32-bit的现代微控制器上，对SEAL算法进行了软件实现[22]。Bertoni首次将AES算法实现在32-bit的微控制器上，并通过多种架构的仿真器对优化实现进行验证[23]。Schwabe在结合最新的平台在Cortex-M3和M4上实现了AES算法，扩展了AES算法的用途[24]。
 
 \subsection{参考文献}
 [1] Daemen, Joan, and Vincent Rijmen. "AES proposal: Rijndael." (1999).
@@ -98,6 +105,15 @@ Kryjak等人运用了这种流水线技术[18]。他们对CLEFIA[19]算法进行
 
 [19] Shirai, Taizo, et al. "The 128-bit blockcipher CLEFIA." Fast Software Encryption: 14th International Workshop, FSE 2007, Luxembourg, Luxembourg, March 26-28, 2007, Revised Selected Papers 14. Springer Berlin Heidelberg, 2007.
 
+[20] Merkle, Ralph C. "Fast software encryption functions." Advances in Cryptology-CRYPTO’90: Proceedings 10. Springer Berlin Heidelberg, 1991.
+
+[21] Osvik, Dag Arne, et al. "Fast software AES encryption." Fast Software Encryption: 17th International Workshop, FSE 2010, Seoul, Korea, February 7-10, 2010, Revised Selected Papers 17. Springer Berlin Heidelberg, 2010.
+
+[22] Rogaway, Phillip, and Don Coppersmith. "A software-optimized encryption algorithm." Journal of Cryptology 11 (1998): 273-287.
+
+[23] Bertoni, Guido, et al. "Efficient software implementation of AES on 32-bit platforms." Cryptographic Hardware and Embedded Systems-CHES 2002: 4th International Workshop Redwood Shores, CA, USA, August 13–15, 2002 Revised Papers 4. Springer Berlin Heidelberg, 2003.
+
+[24] Schwabe, Peter, and Ko Stoffelen. "All the AES you need on Cortex-M3 and M4." International Conference on Selected Areas in Cryptography. Springer International Publishing, 2016.
 
 
 \subsection{项目应用前景和学术价值}
