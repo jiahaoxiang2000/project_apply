@@ -64,7 +64,22 @@ Kryjak等人运用了这种流水线技术[18]。他们对CLEFIA[19]算法进行
 
 早期的轻量级加密算法的软件实现主要集中在8-bit微控制器上。这些微控制器常用于RFID和传感器等设备。在1991年，Merkle尝试将Khufu算法进行软件实现。这为算法在其他不同场景下的应用打开了新的可能性[20]。后来，Osvik将AES算法实现在8-bit的AVR微控制器上，刷新了当时的最快加密记录[21]。
 
-随着微控制器的发展，32-bit微控制器成为主流。软件实现的侧重也发生了改变。Rogaway开始在32-bit的现代微控制器上，对SEAL算法进行了软件实现[22]。Bertoni首次将AES算法实现在32-bit的微控制器上，并通过多种架构的仿真器对优化实现进行验证[23]。Schwabe在结合最新的平台在Cortex-M3和M4上实现了AES算法，扩展了AES算法的用途[24]。
+随着微控制器的发展，32-bit微控制器成为主流。软件实现的侧重也发生了改变。Rogaway开始在32-bit的现代微控制器上，对SEAL算法进行了软件实现[22]。Bertoni首次将AES算法实现在32-bit的微控制器上，并通过多种架构的仿真器对优化实现进行验证[23]。Schwabe在结合ARM平台在Cortex-M3和M4上实现了AES算法，扩展了AES算法的用途[24]。
+
+在软件实现中，存在一些特殊的情况需要注意。例如，抵抗侧信道攻击通常需要添加额外的操作。如何更高效地实现这些抗攻击的操作，成为了一个重要的研究方向。例如，Rivain提出了一种高阶掩码技术[25]。这种技术可以有效地抵抗设备在侧信道攻击中的相关功耗攻击。
+另一方面，轻量级加密算法在某些场景下具有优势。例如，在区块链等对加密算法吞吐量要求较高的场景下，轻量级加密算法可以发挥重要作用。利用SIMD指令集可以提高加密算法的吞吐量[26]。此外，也可以利用GPU来实现加密[21]。这些都是软件实现的重要方向。
+
+总的来说，软件实现的技术比硬件实现更为丰富。因此，许多研究都集中在如何将加密算法高效地实现在更先进的平台上。未来的研究重点将是开发新的软件实现技术，以适应这些新的平台。同时，也需要考虑如何预防新的攻击方式。
+
+\subsubsection{轻量级加密算法软硬件协同实现}
+相比硬件实现和软件实现，软硬件协同实现的研究相对较少。这主要是因为软硬件协同实现需要同时考虑硬件和软件的特性。然而，软硬件协同实现在保证算法性能的同时，也能提高算法的灵活性。例如，当加密算法的标准发生变化时，软硬件协同实现能够更快地适应这些变化。值得注意的是，与硬件实现和软件实现相比，软硬件协同实现起步较晚。
+
+在早期的实现中，加密算法的硬件实现和软件实现通常是分开的。例如，加密算法作为IP核心，以片上外设的形式挂载在数据总线上，如Usselmann实现的AES算法[27]。由于外设与CPU之间的通信开销较大，这种实现方式的性能较低。为了提高性能，一些研究开始尝试将加密算法的硬件实现与软件实现集成在一起。这种实现方式可以减少外设与CPU之间的通信开销，从而提高性能。然而，由于各家厂商的CPU架构不同且闭源，这种实现方式的研究较少。
+
+开源硬件的发展为软硬件协同实现的研究带来了新的机遇。例如，RISC-V是一种开源的CPU架构，可以自由使用。这种架构的出现，为软硬件协同实现提供了新的研究方向。Marshall设计了一套轻量级扩展指令集，将ChaCha算法实现在RISC-V上[28]。基于扩展指令集，Chen在2023年提出了一组通用扩展指令集在RISC-V之上，并将其运用到了LWC最终轮的10个算法上[29]。这种方式将加密的硬件电路集成入了CPU的执行流水线中，保证了加密操作的速度。同时，加密算法中的通用操作被设计为对应的指令，这样即使加密标准更新，也能保持对加密算法的加速效果。
+
+总的来说，软硬件协同实现为轻量级加密算法的实现开辟了新的研究方向。这种实现方式将不利于软件实现的部分转化为硬件实现，并以此作为基础操作。然后，利用软件指令来构建整体算法，从而在加密算法的性能与灵活性之间取得平衡。这也为算法设计提供了一条全新的思路。未来的研究重点是将轻量级加密算法中的通用操作设计为扩展指令集或通用加密IP核。
+
 
 \subsection{参考文献}
 [1] Daemen, Joan, and Vincent Rijmen. "AES proposal: Rijndael." (1999).
@@ -115,6 +130,15 @@ Kryjak等人运用了这种流水线技术[18]。他们对CLEFIA[19]算法进行
 
 [24] Schwabe, Peter, and Ko Stoffelen. "All the AES you need on Cortex-M3 and M4." International Conference on Selected Areas in Cryptography. Springer International Publishing, 2016.
 
+[25] Rivain, Matthieu, Emmanuel Prouff, and Julien Doget. "Higher-order masking and shuffling for software implementations of block ciphers." International Workshop on Cryptographic Hardware and Embedded Systems. Springer Berlin Heidelberg, 2009.
+
+[26] Xu, Runqing, et al. "High-throughput block cipher implementations with SIMD." Journal of Information Security and Applications 70 (2022): 103333.
+
+[27] Usselmann, Rudolf. "Advanced encryption standard/rijndael ip core." 2007-08-20. https://opencores.org/projects/aes\_core (2002).
+
+[28] Marshall, Ben, Daniel Page, and Thinh Hung Pham. "A lightweight ise for chacha on risc-v." 2021 IEEE 32nd International Conference on Application-specific Systems, Architectures and Processors (ASAP). IEEE, 2021.
+
+[29] Cheng, Hao, et al. "RISC-V instruction set extensions for lightweight symmetric cryptography." IACR Transactions on Cryptographic Hardware and Embedded Systems (2023): 193-237.
 
 \subsection{项目应用前景和学术价值}
 \subsection{现有研究基础、条件、手段}
