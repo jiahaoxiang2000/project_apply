@@ -15,7 +15,7 @@
 
 \subsubsection{项目的研究目的}
 随着基础通信设施的不断完善，如5G网络的普及，人们对通信的需求逐渐增加。这种需求的增长催生了大量基于通信的应用，如工业互联网、车联网、物联网等。
-然而，随着这些网络中传输的数据量的增加，安全问题变得越来越严重。这主要是由网络数据中数据包传输机制引起的。幸运的是，对称加密算法提供了一种解决方案，只需双方协商好密钥，就能确保数据在公共信道下的安全传输，而无需调整传输机制。 
+然而，随着这些网络中传输的数据量的增加，安全问题变得越来越严重。这主要是由网络数据中数据包传输机制引起的。幸运的是，对称加密算法提供了一种解决方案，只需双方协商好密钥，就能确保数据在公共信道下的安全传输，而无需调整传输机制。
 
 对称加密算法中，最广泛使用的是2001年的AES[1]国际算法。它在WEB、WIFI等领域，以及服务器与个人计算机上都得到了广泛的应用。然而，为了避免AES算法存在的未知门陷，我国在2006年提出了SMS4[2]对称加密算法来替代AES算法。值得一提的是，SMS4在2021年正式成为ISO标准并得到了国际认可。
 这些传统的对称算法在计算资源充足的场景下，能够提供较高的安全性。但在计算资源受限的场景下，由于这些算法的计算复杂度较高，因此需要一种更加轻量级的对称加密算法来满足这种场景的需求。
@@ -84,9 +84,9 @@ Kryjak等人运用了这种流水线技术[18]。他们对CLEFIA[19]算法进行
 \subsection{参考文献}
 [1] Daemen, Joan, and Vincent Rijmen. "AES proposal: Rijndael." (1999).
 
-[2] Diffie, Whitfield, and George Ledin. "SMS4 encryption algorithm for wireless networks." Cryptology ePrint Archive (2008).
+    [2] Diffie, Whitfield, and George Ledin. "SMS4 encryption algorithm for wireless networks." Cryptology ePrint Archive (2008).
 
-[3] Dobraunig, Christoph, et al. "Ascon v1. 2: Lightweight authenticated encryption and hashing." Journal of Cryptology 34 (2021): 1-42.
+    [3] Dobraunig, Christoph, et al. "Ascon v1. 2: Lightweight authenticated encryption and hashing." Journal of Cryptology 34 (2021): 1-42.
 
 [4] Wen-Ling, Wu, et al. "The block cipher uBlock." Journal of Cryptologic Research 6.06 (2019): 690-703.
 
@@ -94,51 +94,51 @@ Kryjak等人运用了这种流水线技术[18]。他们对CLEFIA[19]算法进行
 
 [6] Mohajerani, Kamyar, et al. "FPGA benchmarking of round 2 candidates in the NIST lightweight cryptography standardization process: Methodology, metrics, tools, and results." Cryptology ePrint Archive (2020).
 
-[7] Bogdanov, Andrey, et al. "PRESENT: An ultra-lightweight block cipher." Cryptographic Hardware and Embedded Systems-CHES 2007: 9th International Workshop, Vienna, Austria, September 10-13, 2007. Proceedings 9. Springer Berlin Heidelberg, 2007.
+    [7] Bogdanov, Andrey, et al. "PRESENT: An ultra-lightweight block cipher." Cryptographic Hardware and Embedded Systems-CHES 2007: 9th International Workshop, Vienna, Austria, September 10-13, 2007. Proceedings 9. Springer Berlin Heidelberg, 2007.
 
-[8] Beaulieu, Ray, et al. "The SIMON and SPECK lightweight block ciphers." Proceedings of the 52nd annual design automation conference. 2015.
+    [8] Beaulieu, Ray, et al. "The SIMON and SPECK lightweight block ciphers." Proceedings of the 52nd annual design automation conference. 2015.
 
-[9] Banik, Subhadeep, et al. "Midori: A block cipher for low energy." Advances in Cryptology–ASIACRYPT 2015: 21st International Conference on the Theory and Application of Cryptology and Information Security, Auckland, New Zealand, November 29--December 3, 2015, Proceedings, Part II 21. Springer Berlin Heidelberg, 2015.
+    [9] Banik, Subhadeep, et al. "Midori: A block cipher for low energy." Advances in Cryptology–ASIACRYPT 2015: 21st International Conference on the Theory and Application of Cryptology and Information Security, Auckland, New Zealand, November 29--December 3, 2015, Proceedings, Part II 21. Springer Berlin Heidelberg, 2015.
 
-[10] Beierle, Christof, et al. "The SKINNY family of block ciphers and its low-latency variant MANTIS." Advances in Cryptology–CRYPTO 2016: 36th Annual International Cryptology Conference, Santa Barbara, CA, USA, August 14-18, 2016, Proceedings, Part II 36. Springer Berlin Heidelberg, 2016.
+    [10] Beierle, Christof, et al. "The SKINNY family of block ciphers and its low-latency variant MANTIS." Advances in Cryptology–CRYPTO 2016: 36th Annual International Cryptology Conference, Santa Barbara, CA, USA, August 14-18, 2016, Proceedings, Part II 36. Springer Berlin Heidelberg, 2016.
 
-[11] Arich, Touria, and Mohssine Eleuldj. "Hardware implementations of the data encryption standard." The 14th International Conference on Microelectronics,. IEEE, 2002.
+    [11] Arich, Touria, and Mohssine Eleuldj. "Hardware implementations of the data encryption standard." The 14th International Conference on Microelectronics,. IEEE, 2002.
 
-[12] Good, Tim, and Mohammed Benaissa. "AES as stream cipher on a small FPGA." 2006 IEEE International Symposium on Circuits and Systems. IEEE, 2006.
+    [12] Good, Tim, and Mohammed Benaissa. "AES as stream cipher on a small FPGA." 2006 IEEE International Symposium on Circuits and Systems. IEEE, 2006.
 
-[13] Leong, Monk-Ping, et al. "A bit-serial implementation of the international data encryption algorithm IDEA." Proceedings 2000 IEEE Symposium on Field-Programmable Custom Computing Machines (Cat. No. PR00871). IEEE, 2000.
+    [13] Leong, Monk-Ping, et al. "A bit-serial implementation of the international data encryption algorithm IDEA." Proceedings 2000 IEEE Symposium on Field-Programmable Custom Computing Machines (Cat. No. PR00871). IEEE, 2000.
 
-[14] Jean, Jérémy, et al. "Bit-Sliding: A Generic Technique for Bit-Serial Implementations of SPN-based Primitives: Applications to AES, PRESENT and SKINNY." Cryptographic Hardware and Embedded Systems–CHES 2017: 19th International Conference, Taipei, Taiwan, September 25-28, 2017, Proceedings. Springer International Publishing, 2017.
+    [14] Jean, Jérémy, et al. "Bit-Sliding: A Generic Technique for Bit-Serial Implementations of SPN-based Primitives: Applications to AES, PRESENT and SKINNY." Cryptographic Hardware and Embedded Systems–CHES 2017: 19th International Conference, Taipei, Taiwan, September 25-28, 2017, Proceedings. Springer International Publishing, 2017.
 
-[15] Elbirt, Adam J., et al. "An FPGA-based performance evaluation of the AES block cipher candidate algorithm finalists." IEEE Transactions on Very Large Scale Integration (VLSI) Systems 9.4 (2001): 545-557.
+    [15] Elbirt, Adam J., et al. "An FPGA-based performance evaluation of the AES block cipher candidate algorithm finalists." IEEE Transactions on Very Large Scale Integration (VLSI) Systems 9.4 (2001): 545-557.
 
 [16] Gupta, Sourav Sen, et al. "High-performance hardware implementation for RC4 stream cipher." IEEE Transactions on Computers 62.4 (2012): 730-743.
 
 [17] Paul, Goutam, and Subhamoy Maitra. RC4 stream cipher and its variants. CRC press, 2011.
 
-[18] Kryjak, Tomasz, and Marek Gorgon. "Pipeline implementation of the 128-bit block cipher CLEFIA in FPGA." 2009 International Conference on Field Programmable Logic and Applications. IEEE, 2009.
+    [18] Kryjak, Tomasz, and Marek Gorgon. "Pipeline implementation of the 128-bit block cipher CLEFIA in FPGA." 2009 International Conference on Field Programmable Logic and Applications. IEEE, 2009.
 
-[19] Shirai, Taizo, et al. "The 128-bit blockcipher CLEFIA." Fast Software Encryption: 14th International Workshop, FSE 2007, Luxembourg, Luxembourg, March 26-28, 2007, Revised Selected Papers 14. Springer Berlin Heidelberg, 2007.
+    [19] Shirai, Taizo, et al. "The 128-bit blockcipher CLEFIA." Fast Software Encryption: 14th International Workshop, FSE 2007, Luxembourg, Luxembourg, March 26-28, 2007, Revised Selected Papers 14. Springer Berlin Heidelberg, 2007.
 
-[20] Merkle, Ralph C. "Fast software encryption functions." Advances in Cryptology-CRYPTO’90: Proceedings 10. Springer Berlin Heidelberg, 1991.
+    [20] Merkle, Ralph C. "Fast software encryption functions." Advances in Cryptology-CRYPTO’90: Proceedings 10. Springer Berlin Heidelberg, 1991.
 
-[21] Osvik, Dag Arne, et al. "Fast software AES encryption." Fast Software Encryption: 17th International Workshop, FSE 2010, Seoul, Korea, February 7-10, 2010, Revised Selected Papers 17. Springer Berlin Heidelberg, 2010.
+    [21] Osvik, Dag Arne, et al. "Fast software AES encryption." Fast Software Encryption: 17th International Workshop, FSE 2010, Seoul, Korea, February 7-10, 2010, Revised Selected Papers 17. Springer Berlin Heidelberg, 2010.
 
-[22] Rogaway, Phillip, and Don Coppersmith. "A software-optimized encryption algorithm." Journal of Cryptology 11 (1998): 273-287.
+    [22] Rogaway, Phillip, and Don Coppersmith. "A software-optimized encryption algorithm." Journal of Cryptology 11 (1998): 273-287.
 
 [23] Bertoni, Guido, et al. "Efficient software implementation of AES on 32-bit platforms." Cryptographic Hardware and Embedded Systems-CHES 2002: 4th International Workshop Redwood Shores, CA, USA, August 13–15, 2002 Revised Papers 4. Springer Berlin Heidelberg, 2003.
 
-[24] Schwabe, Peter, and Ko Stoffelen. "All the AES you need on Cortex-M3 and M4." International Conference on Selected Areas in Cryptography. Springer International Publishing, 2016.
+    [24] Schwabe, Peter, and Ko Stoffelen. "All the AES you need on Cortex-M3 and M4." International Conference on Selected Areas in Cryptography. Springer International Publishing, 2016.
 
-[25] Rivain, Matthieu, Emmanuel Prouff, and Julien Doget. "Higher-order masking and shuffling for software implementations of block ciphers." International Workshop on Cryptographic Hardware and Embedded Systems. Springer Berlin Heidelberg, 2009.
+    [25] Rivain, Matthieu, Emmanuel Prouff, and Julien Doget. "Higher-order masking and shuffling for software implementations of block ciphers." International Workshop on Cryptographic Hardware and Embedded Systems. Springer Berlin Heidelberg, 2009.
 
-[26] Xu, Runqing, et al. "High-throughput block cipher implementations with SIMD." Journal of Information Security and Applications 70 (2022): 103333.
+    [26] Xu, Runqing, et al. "High-throughput block cipher implementations with SIMD." Journal of Information Security and Applications 70 (2022): 103333.
 
-[27] Usselmann, Rudolf. "Advanced encryption standard/rijndael ip core." 2007-08-20. https://opencores.org/projects/aes\_core (2002).
+    [27] Usselmann, Rudolf. "Advanced encryption standard/rijndael ip core." 2007-08-20. https://opencores.org/projects/aes\_core (2002).
 
 [28] Marshall, Ben, Daniel Page, and Thinh Hung Pham. "A lightweight ise for chacha on risc-v." 2021 IEEE 32nd International Conference on Application-specific Systems, Architectures and Processors (ASAP). IEEE, 2021.
 
-[29] Cheng, Hao, et al. "RISC-V instruction set extensions for lightweight symmetric cryptography." IACR Transactions on Cryptographic Hardware and Embedded Systems (2023): 193-237.
+    [29] Cheng, Hao, et al. "RISC-V instruction set extensions for lightweight symmetric cryptography." IACR Transactions on Cryptographic Hardware and Embedded Systems (2023): 193-237.
 
 \subsection{项目应用前景和学术价值}
 项目研究的三个方面，硬件实现、软件实现和软硬件协同实现，都具有广泛的应用前景。硬件实现主要适用于专用集成电路(ASIC)和现场可编程门阵列(FPGA)。在对加密性能和成本有较高要求的场景下，硬件实现具有不可替代的地位。例如，可以应用于IC无线射频卡、云加密机等。
@@ -171,15 +171,15 @@ Kryjak等人运用了这种流水线技术[18]。他们对CLEFIA[19]算法进行
 
 本研究项目的内容是研究轻量级分组密码算法的多场景优化实现。研究轻量级分组密码在硬件、软件和软硬件平台下优化实现的关键技术，具体来说，包括以下三个方面的内容：
 
-1）  研究轻量级分组密码算法在专用集成电路(ASIC)和现场可编程门阵列(FPGA)上的硬件实现。
+1）研究轻量级分组密码算法在专用集成电路(ASIC)和现场可编程门阵列(FPGA)上的硬件实现。
 
 在需要高性能的场景下，硬件实现是不可替代的。其中就加密算法部署的规模，ASIC是一种专用集成电路，可以提供更高的性能，在大批量部署下具有优势。同时FPGA是一种现场可编程门阵列，在少批量部署上，可以提供更高的灵活性。本项目将研究轻量级分组密码算法在ASIC和FPGA上的硬件实现，以提高算法实现的性能，同时考虑硬件实现过程中泄露的侧信道信息，防止功耗、故障攻击等，为算法提供硬件实现安全。
 
-2）  研究轻量级分组密码算法在微控制器上的软件实现。
+2）研究轻量级分组密码算法在微控制器上的软件实现。
 
 在物联网、智能家居等场景下，终端设备采用资源受限的微控制器，将硬件实现的加密算法部署到微控制器上，需要片外加密芯片或片内加密模块，这样会增加成本。因此，软件实现是一种更为经济的解决方案。本项目将研究轻量级分组密码算法在8-bit或32-bit的微控制器上的软件实现，以提高算法实现的性能，同时考虑软件实现过程中泄露的侧信道信息，防止时间、缓存攻击等，为算法提供软件实现安全。
 
-3）  研究轻量级分组密码算法的软硬件协同实现。
+3）研究轻量级分组密码算法的软硬件协同实现。
 
 在一些场景下，需要兼顾硬件实现的性能和软件实现的灵活性。例如，区块链等场景下，需要高性能的加密算法，同时也需要灵活的加密算法。本项目将研究轻量级分组密码算法的软硬件协同实现，将加密算法的通用操作设计为扩展指令集或通用加密IP核，以提高算法的性能和灵活性。
 
@@ -212,8 +212,32 @@ Kryjak等人运用了这种流水线技术[18]。他们对CLEFIA[19]算法进行
 
 \subsubsection{可行性分析}
 
+首先，针对本项目的主要研究内容和研究目标，项目组做了充分的准备并制定了详细的研究方案和细致的研究计划。同时，针对本项目的各项主要研究内容，本项目组在理论和技术方面均已具备大量的研究基础和工作积累，这将会积极促进本项目的顺利的启动和研究深入。
+其次，在研究内容的描述中，我们尽可能细化，明确研究对象，具体研究方法。尤其是在研究方案的阐述中，我们明确了需解决的问题，初步拟定了采取的技术方法等，研究计划清楚且现实可行。最后，项目的研究目标和预期成果制定合理适度，能够保证研究的广度和深度。
+综上所述，我们认为完成本项目的研究是切实可行的。
+
+
 \subsection{本项目的创新之处}
+
+本项目的创新之处主要体现在以下三个方面：
+1）本项目将研究轻量级分组密码算法的侧信道攻击防护。在硬件实现和软件实现中，设计防护方案，防止功耗、时间、缓存等侧信道攻击，保证算法实现的安全性。
+2）本项目将研究轻量级分组密码算法的软硬件协同实现。将加密算法的通用操作设计为扩展指令集或通用加密IP核，以提高算法的性能和灵活性，面向未来多加密算法场景。
+3）目前对于轻量级分组密码算法的实现，主要集中在单一实现平台上。本项目将研究轻量级分组密码算法的多环境平台下的实现，为设计多平台下高效密码算法设计提供研究基础。
+
 \subsection{预期研究进展}
+1）2024年6月—2024年11月
+确定总体方案，对项目实施做出具体安排：文献、资料的跟踪及收集，研究和学习轻量级密码算法硬件，软件以及软硬件协同优化实现，为本项目算法设计打下基础。
+
+2）2024年12月—2025年6月
+研究轻量级分组密码的硬件优化实现，并应用到对具体场景。组件上，对轻量级S盒在不同工艺库下的最优实现进行研究，架构上，分析已有架构对轻量级分组密码实现的影响。
+
+3）2025年7月—2025年11月
+研究轻量级分组密码的软件优化实现，并在嵌入设备中对其验证。组件上，对轻量级S盒最优比特切片实现进行研究，平台上，研究轻量级分组密码在嵌入式平台实现的难点。
+
+4）2025年12月—2026年6月
+通过硬件技术设计出通用加密组件，结合软件实现优化技术，提出一种软硬件协同，优化实现轻量级分组密码的方案。
+
+对项目研究工作进行总结，准备项目结题，撰写总结报告，参加结题答辩。
 
 
 \end{document}
