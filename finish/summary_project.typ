@@ -1,0 +1,11 @@
+#import "@preview/basic-document-props:0.1.0": simple-page
+#show: simple-page.with(
+  "isomo",
+  "",
+  middle-text: "Summary project",
+  date: true,
+  numbering: true,
+  supress-mail-link: false,
+)
+
+= Summary project
