@@ -4,3 +4,9 @@
 [submodule ".claude"]
 	path = .claude
 	url = git@github.com:jiahaoxiang2000/claude-conf.git
+[submodule "SecondPaper"]
+	path = SecondPaper
+	url = git@github.com:jiahaoxiang2000/SecondPaper.git
+[submodule "ThirdPaper"]
+	path = ThirdPaper
+	url = git@github.com:jiahaoxiang2000/ThirdPaper.git
